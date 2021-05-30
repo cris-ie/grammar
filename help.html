@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>arithmetic expression simulator - documentation</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <link rel="shortcut icon" href="./favicon.ico" />
+  </head>
+
+  <body>
+    <header id="main_head">
+      <img class="logo" src="favicon.ico" alt="Loogoo" />
+      <h1>arithmetic expression simulator for single digit natural numbers</h1>
+    </header>
+    <h2>Documentation</h2>
+    <h3>Used Frameworks:</h3>
+    <p>None - The application is writen in plain JS, CSS and HTML.</p>
+
+    <h3>Implemantation</h3>
+    <p>The was implemanted with JS.</p>
+    <h4>Datastructure</h4>
+    <p>
+      The grammar is internally represented in an array. Which holds all valid
+      states. The generated arithmatic expression is stored in a string.
+    </p>
+    <h4>Algorithm</h4>
+    <p>
+      Until a terminal state in the arithmatic expression string is detected,
+      the application replaces occurences of non terminal symbols with a
+      randomly choosen symbol from the grammar. In a final step all symbols that
+      would lead to a number are replaced with a random number.
+    </p>
+    <h3>Technical particularities:</h3>
+    <p>
+      Due to the fact that the genarator can genarate arbitrarily long
+      arithmatic expressions, I skewed the distribution of possible replacements
+      towards a higher occurence of final states to avoid unnecessarily long
+      terms. 
+      <br/>
+      <br/>
+   <b>Original rules according to grammar</b>
+      <pre>
+        var rules = [
+        'S+S',
+        'S',
+        'S-S',
+        'S*S',
+        'S/S',
+        '(S)',
+        'Z'
+        ];
+    </pre>
+    <b>Rules used by application</b>
+    <pre>
+        var rules = [
+        'S+S',
+        'S',
+        'S',
+        'S',
+        'S-S',
+        'S*S',
+        'S/S',
+        '(S)',
+        '(S)',
+        '(S)',
+        'Z',
+        'Z',
+        'Z',
+        'Z',
+        'Z',
+        ];
+        </pre>
+        This ensures that a terminal state is more likely to be picked.
+    </p>
+  </body>
+</html>

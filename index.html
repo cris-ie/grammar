@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>arithmetic expression simulator</title>
+    <link rel="stylesheet" href="./style.css" />
+   
+    <link rel="shortcut icon" href="./favicon.ico" />
+  </head>
+  <body>
+    <header id="main_head">
+      <img class="logo" src="favicon.ico" alt="Loogoo" />
+      <h1>arithmetic expression simulator for single digit natural numbers</h1>
+    </header>
+    <div>
+   
+      <form>
+        <fieldset id="inputHeader">
+          <legend>input</legend>
+
+          <button id="correctexpression" type="button" onclick="onCreate()">
+            create correct expression
+          </button>
+        </fieldset>
+        <div id="container">
+          <div id="leftcontent">
+            <pre>
+
+
+G = {V, ∑ , R , S} with:
+
+V = {S,Z}
+∑ = { + , - , * , / , 0...9}
+R = { S -> S+S | S | S-S | S*S | S/S | (S) | Z }
+S = {S}
+
+Z = Number (0...9)
+
+       </pre
+            >
+          </div>
+          <div id="rightcontent">
+            <table class= "fixed_header" id="output">
+              <thead>
+              <tr>
+                <th>step</th>
+                <th>old state</th>
+                <th>new state</th>
+                <th>rule</th>
+              </tr>
+              </thead>
+<tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div id="controls">
+         
+          <button id="forward" type="button" onclick="onForward()">
+            forward
+          </button>
+          <button id="cancel" type="button" disabled onClick="window.location.reload();">
+           cancel
+          
+          </button>
+          <button id="help" type="button" onclick="window.location='./help.html'">help</button>
+
+          <label for="aRange">speed</label>
+          <input id="aRange" type="range" min="1" max="5" step="1" value="1" />
+        </div>
+      </form>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
